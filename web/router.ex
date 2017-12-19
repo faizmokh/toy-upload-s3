@@ -17,6 +17,7 @@ defmodule ToyUploadS3.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    resources "/upload", UploadController, only: [:create, :new, :index]
   end
 
   # Other scopes may use custom stacks.
